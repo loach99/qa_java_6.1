@@ -2,7 +2,7 @@ package ru.netology;
 
 public class SalesAnalysis {
     // номер месяца, в котором был минимум продаж, то есть осуществлены продажи на минимальную сумму!!!
-    public long minSales(int[] sales) {
+    public int minSales(int[] sales) {
         int minMonth = 0; // номер месяца с минимальными продажами среди просмотренных ранее
 
         for (int i = 0; i < sales.length; i++) {
@@ -51,7 +51,7 @@ public class SalesAnalysis {
         return sum / 12;
     }
 
-    public long summaSales(int[] sales) {
+    public long sumSales(int[] sales) {
         long sum = 0;
         for (int i = 0; i < sales.length; i++) {
             sum = sum + sales[i];

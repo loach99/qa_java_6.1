@@ -27,7 +27,7 @@ public class SalesAnalysisTest {
         SalesAnalysis service = new SalesAnalysis();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 180;
-        long actual = service.summaSales(sales);
+        long actual = service.sumSales(sales);
         Assertions.assertEquals(expected, actual);
     }
 
