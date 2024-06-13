@@ -2,7 +2,7 @@ package ru.netology;
 
 public class SalesAnalysis {
     // номер месяца, в котором был минимум продаж, то есть осуществлены продажи на минимальную сумму!!!
-    public int minSales(int[] sales) {
+    public long minSales(int[] sales) {
         int minMonth = 0; // номер месяца с минимальными продажами среди просмотренных ранее
 
         for (int i = 0; i < sales.length; i++) {
@@ -13,21 +13,21 @@ public class SalesAnalysis {
         return minMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
     }
 
-    public int belowAverage(int[] sales) {
-        int summa = findAverageWithoutUsingStream(sales) ;
+    public long belowAverage(int[] sales) {
+        long sum = findAverageWithoutUsingStream(sales) ;
         int monthMin = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < summa)
+            if (sales[i] < sum)
                 monthMin = monthMin + 1;
         }
         return monthMin;
     }
 
-    public int aboveAverage(int[] sales) {
-        int summa = findAverageWithoutUsingStream(sales); // Среднее значение
+    public long aboveAverage(int[] sales) {
+        long sum = findAverageWithoutUsingStream(sales); // Среднее значение
         int monthMax = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > summa)
+            if (sales[i] > sum)
                 monthMax = monthMax + 1;
         }
         return monthMax;
@@ -43,24 +43,24 @@ public class SalesAnalysis {
         return maxMonth + 1;
     }
 
-    public int averageSalesAmount(int[] sales) {
-        int summa = 0;
+    public long averageSalesAmount(int[] sales) {
+        long sum = 0;
         for (int i = 0; i < sales.length; i++) {
-            summa = (summa + sales[i]);
+            sum = (sum + sales[i]);
         }
-        return summa / 12;
+        return sum / 12;
     }
 
-    public int summaSales(int[] sales) {
-        int sum = 0;
+    public long summaSales(int[] sales) {
+        long sum = 0;
         for (int i = 0; i < sales.length; i++) {
             sum = sum + sales[i];
         }
         return sum;
     }
 
-    public int findSumWithoutUsingStream(int[] sales) {
-        int sum = 0;
+    public long findSumWithoutUsingStream(int[] sales) {
+        long sum = 0;
         for (int value : sales) {
             sum += value;
         }
@@ -68,7 +68,7 @@ public class SalesAnalysis {
     }
 
     public int findAverageWithoutUsingStream(int[] sales) {
-        int sum = findSumWithoutUsingStream(sales);
+        long sum = findSumWithoutUsingStream(sales);
         return (int) sum / sales.length;
     }
 }
